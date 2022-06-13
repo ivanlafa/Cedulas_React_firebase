@@ -5,12 +5,12 @@ import { nanoid } from 'nanoid';
 const Formulario = () => {
 
     const objPersona = {
-        cedula:'',
+        cedula: '',
         nombre: '',
         apellido: '',
         estatura: '',
         sexo: '',
-        telefono: '',
+        tipo_sangre: '',
         fecha_nacimiento: " ",
         fecha_expedicion: " ",
     }
@@ -69,16 +69,16 @@ const Formulario = () => {
             return
         }
 
-        if (!persona.telefono) {
-            setError('¡Vacio el campo telefono!');
+        if (!persona.tipo_sangre) {
+            setError('¡Vacio el campo tipo de sangre!');
             return
         }
-        if(!persona.fecha_nacimiento){
+        if (!persona.fecha_nacimiento) {
             setError('Ingrese La Fecha')
             return
         }
 
-        if(!persona.fecha_expedicion){
+        if (!persona.fecha_expedicion) {
             setError('Ingrese La Fecha')
             return
         }
@@ -135,7 +135,7 @@ const Formulario = () => {
             nombre: item.nombre,
             apellido: item.apellido,
             estatura: item.estatura,
-            telefono: item.telefono,
+            tipo_sangre: item.tipo_sangre,
             fecha_nacimiento: item.fecha_nacimiento,
             fecha_expedicion: item.fecha_expedicion,
         }
@@ -169,20 +169,20 @@ const Formulario = () => {
             return
         }
 
-        if(!persona.sexo){
+        if (!persona.sexo) {
             setError('Por favor seleccionar sexo');
             return
         }
-        if (!persona.telefono) {
-            setError('Campo teléfono vacío');
+        if (!persona.tipo_sangre) {
+            setError('Campo tipo de sangre vacío');
             return
         }
-        if(!persona.fecha_nacimiento){
+        if (!persona.fecha_nacimiento) {
             setError('Seleccione fecha');
             return
         }
 
-        if(!persona.fecha_expedicion){
+        if (!persona.fecha_expedicion) {
             setError('Seleccione fecha');
             return
         }
@@ -219,7 +219,7 @@ const Formulario = () => {
                 <div className="col-8">
                     <h4 className="text-rigth"> Total de cedulas:  {lista.length}</h4>
                     {lista.length < 1 ?
-                        <h2 className='mt-5 text-center'>No hay cedulas listados aún</h2>:
+                        <h2 className='mt-5 text-center'>No hay cedulas listados aún</h2> :
                         <table className="table table-white">
                             <thead>
                                 <tr>
@@ -228,7 +228,7 @@ const Formulario = () => {
                                     <th scope="col">Apellido</th>
                                     <th scope="col">Estatura</th>
                                     <th scope="col">Sexo</th>
-                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Tipo de sangre</th>
                                     <th scope="col">Fecha Nacimiento</th>
                                     <th scope="col">Fecha expedicion</th>
                                 </tr>
@@ -242,7 +242,7 @@ const Formulario = () => {
                                             <td>{item.apellido}</td>
                                             <td>{item.estatura}</td>
                                             <td>{item.sexo}</td>
-                                            <td>{item.telefono}</td>
+                                            <td>{item.tipo_sangre}</td>
                                             <td>{item.fecha_nacimiento}</td>
                                             <td>{item.fecha_expedicion}</td>
 
@@ -264,15 +264,15 @@ const Formulario = () => {
                 <div className="col-4">
                     <h4 className="text-center">
                         {
-                            modoEdicion ? 'Editar persona' : 'Agregar persona'
+                            modoEdicion ? 'Editar cedula' : 'Agregar cedula'
                         }</h4>
                     <form onSubmit={modoEdicion ? editar : guardarDatos}>
                         {
                             error ? <span className='text-danger'>{error}</span> : null
                         }
-                         <input
+                        <input
                             className='form-control mb-2'
-                            type="text"
+                            type="number"
                             placeholder='Ingrese Cedula'
                             onChange={(e) => setpersona({ ...persona, cedula: e.target.value })}
                             value={persona.cedula}
@@ -295,7 +295,7 @@ const Formulario = () => {
                         />
                         <input
                             className='form-control mb-2'
-                            type="text"
+                            type="number"
                             placeholder='Ingrese estatura'
                             onChange={(e) => setpersona({ ...persona, estatura: e.target.value })}
                             value={persona.estatura}
@@ -331,11 +331,11 @@ const Formulario = () => {
                         </select>
                         <input
                             className='form-control mb-2'
-                            type="number"
+                            type="text"
                             min={0}
-                            placeholder='Ingrese Teléfono'
-                            onChange={(e) => setpersona({ ...persona, telefono: e.target.value })}
-                            value={persona.telefono}
+                            placeholder='Ingrese Tipo de sangre'
+                            onChange={(e) => setpersona({ ...persona, tipo_sangre: e.target.value })}
+                            value={persona.tipo_sangre}
                         />
                         <a>Fecha Nacimiento</a>
                         <input
@@ -346,7 +346,7 @@ const Formulario = () => {
                             value={persona.fecha_nacimiento}
                         />
 
-                        <a>Fecha Nacimiento</a>
+                        <a>Fecha expedicion</a>
                         <input
                             className='form-control mb-2'
                             type="date"
