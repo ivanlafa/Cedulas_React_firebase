@@ -1,0 +1,85 @@
+
+*{
+  margin: 0%;
+  padding: 0%;
+  font-size: medium;
+ 
+}
+
+body {
+  font-family: monospace;
+  background: rgb(157, 151, 255);
+  background: linear-gradient(90deg, rgb(4, 4, 5) 0%, rgba(214, 214, 252, 1) 35%, rgba(0, 212, 255, 1) 100%);
+
+}
+
+
+.text.center{
+  font-size: medium;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: oblique;
+}
+body {
+  padding: 40px;
+  font-family: monospace;
+  background: rgb(157, 151, 255);
+  background: linear-gradient(90deg, rgba(157, 151, 255, 1) 0%, rgba(214, 214, 252, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+.btn {
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  margin: 15px;
+  padding: 6px;
+  width: 70px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-size: 15px;
+  background-color: rgb(121, 135, 161);
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+}
+.btn:hover {
+  color: black;
+  background-color: #b12323;
+  transition: 0.3s;
+  flex-direction: column;
+}
+form {
+  align-content: center;
+  padding-top: 30px;
+  margin: 35px;
+  width: 220px;
+  height: 24px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-size: 20px;
+  float: right;
+}
+.Btones {
+  display: flex;
+}
+input {
+  border-radius: 10px;
+  margin-right: 10px;
+  height: 35px;
+  width: 100px;
+  border-radius: 2px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-size: 20px;
+  color: black;
+  text-transform: lowercase;
+}
+a {
+  font-size: smaller;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200px;
+}
+h4 {
+  font-size: 40px;
+  height: 30px;
+  align-items: center;
+}
+
+.espacios{
+  display: flex;
+}

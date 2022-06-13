@@ -1,0 +1,5 @@
+Link AWS
+https://main.d2ojzjpfyuq0z0.amplifyapp.com
+
+Link Netlify
+https://stupendous-hamster-4c5c86.netlify.app
