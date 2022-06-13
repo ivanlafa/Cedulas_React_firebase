@@ -1,6 +1,8 @@
 import firebase from "firebase/app";
 import 'firebase/firestore';
 
+
+//basee de datos con firebase
 const firebaseConfig = {
   apiKey: "AIzaSyD_UJdHg1EtLc9NIYEYzGRfLnnUNdoAGeg",
   authDomain: "cedula-cf0d1.firebaseapp.com",
