@@ -8,6 +8,7 @@ const Formulario = () => {
     const objPersona = {
         cedula: '',
         nombre: '',
+        estado: '',
         apellido: '',
         estatura: '',
         sexo: '',
@@ -62,6 +63,11 @@ const Formulario = () => {
 
         if (!persona.apellido) {
             setError('¡Vacio el campo apellido!');
+            return
+        }
+
+        if (!persona.estado) {
+            setError('¡Vacio el campo nombre!');
             return
         }
 
@@ -135,6 +141,7 @@ const Formulario = () => {
             cedula: item.cedula,
             nombre: item.nombre,
             apellido: item.apellido,
+            estado: item.estado,
             estatura: item.estatura,
             tipo_sangre: item.tipo_sangre,
             fecha_nacimiento: item.fecha_nacimiento,
@@ -161,6 +168,11 @@ const Formulario = () => {
         }
 
         if (!persona.apellido) {
+            setError('Por favor digitar apellido');
+            return
+        }
+
+        if (!persona.estado) {
             setError('Por favor digitar apellido');
             return
         }
@@ -227,6 +239,7 @@ const Formulario = () => {
                                     <th scope="col">Cedula</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido</th>
+                                    <th scope="col">Estado</th>
                                     <th scope="col">Estatura</th>
                                     <th scope="col">Sexo</th>
                                     <th scope="col">Tipo de sangre</th>
@@ -241,6 +254,7 @@ const Formulario = () => {
                                             <td>{item.cedula}</td>
                                             <td>{item.nombre}</td>
                                             <td>{item.apellido}</td>
+                                            <td>{item.estado}</td>
                                             <td>{item.estatura}</td>
                                             <td>{item.sexo}</td>
                                             <td>{item.tipo_sangre}</td>
@@ -294,6 +308,15 @@ const Formulario = () => {
                             onChange={(e) => setpersona({ ...persona, apellido: e.target.value })}
                             value={persona.apellido}
                         />
+                        <input
+                            className='form-control mb-2'
+                            type="text"
+                            placeholder='Ingrese Estado'
+                            onChange={(e) => setpersona({ ...persona, estado: e.target.value })}
+                            value={persona.estado}
+
+                        />
+
                         <input
                             className='form-control mb-2'
                             type="number"
